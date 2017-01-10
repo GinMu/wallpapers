@@ -14,7 +14,7 @@ BOT_NAME = 'wallpapers'
 SPIDER_MODULES = ['wallpapers.spiders']
 NEWSPIDER_MODULE = 'wallpapers.spiders'
 
-ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1} # ImagePipeline的自定义实现类
+ITEM_PIPELINES = {'wallpapers.pipelines.WallPapersPipeline': 1} # ImagePipeline的自定义实现类
 IMAGES_STORE = './girl'   # 图片存储路径
 IMAGES_EXPIRES = 90                                   # 过期天数
 # IMAGES_MIN_HEIGHT = 100                               # 图片的最小高度
