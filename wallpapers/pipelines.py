@@ -6,10 +6,10 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import scrapy
-from scrapy.pipeline.images import ImagesPipeline
+from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exceptions import DropItem
 
-class WallpapersPipeline(ImagesPipeline):
+class WallPapersPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
         for image_url in item['image_urls']:

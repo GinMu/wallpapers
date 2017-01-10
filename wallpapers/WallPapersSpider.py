@@ -4,7 +4,7 @@ from wallpapers.items import WallpapersItem
 url = 'http://wallpaperswide.com/girls-desktop-wallpapers.html'
 host = 'http://wallpaperswide.com'
 class WallPapersSpider(scrapy.Spider):
-    name = 'wallpapers_spider'
+    name = 'wallpapers'
     start_urls = ['http://wallpaperswide.com/girls-desktop-wallpapers.html']
     def parse(self, response):
         pages = response.xpath('//div[@class="pagination"]/a[last()-1]/text()').extract()[0]
@@ -27,5 +27,6 @@ class WallPapersSpider(scrapy.Spider):
 
         if len(url) != 0:
             item = WallpapersItem()
-            item['image_urls'] = host + url[0]
+            url[0] = host + url[0]
+            item['image_urls'] = url
             return item
