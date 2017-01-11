@@ -8,6 +8,7 @@
 import scrapy
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exceptions import DropItem
+import os
 
 class WallPapersPipeline(ImagesPipeline):
 
@@ -19,5 +20,8 @@ class WallPapersPipeline(ImagesPipeline):
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem("Item contains no images")
-        item['image_paths'] = image_paths
+        paths = item['image_urls'][0].split('/')
+        name = paths[len(paths) - 1]
+        item['image_paths'] = name
+        os.rename('./girls/' + image_paths[0], './girls/full/' + name)
         return item

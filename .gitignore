@@ -91,3 +91,5 @@ ENV/
 .ropeproject
 
 girl
+.DS_Store
+girls
