@@ -1,5 +1,5 @@
 # wallpapers
-a python3 crawler for downloading wallpaper images based on scrapy which the version is 1.3
+a python3 crawler for downloading wallpaper images based on scrapy whose version is 1.3
 
 * git clone https://github.com/GinMu/wallpapers.git
 * brew install pyenv
