@@ -8,7 +8,7 @@ class WallPapersSpider(scrapy.Spider):
     start_urls = []
     start_urls.append(url)
     def parse(self, response):
-        pages = response.xpath('//div[@class="pagination"]/a[last()-1]/text()').extract()[0]
+        pages = response.xpath('//div[@class="pagination"][last()]/a[last()-1]/text()').extract()[0]
         for page in range(int(pages)):
             p = str(page + 1)
             full_url = url + '/page/' + p
