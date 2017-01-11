@@ -1,11 +1,12 @@
 import scrapy
 import os
 from wallpapers.items import WallpapersItem
-url = 'http://wallpaperswide.com/girls-desktop-wallpapers.html'
+url = 'http://wallpaperswide.com/movies-desktop-wallpapers.html'
 host = 'http://wallpaperswide.com'
 class WallPapersSpider(scrapy.Spider):
     name = 'wallpapers'
-    start_urls = ['http://wallpaperswide.com/girls-desktop-wallpapers.html']
+    start_urls = []
+    start_urls.append(url)
     def parse(self, response):
         pages = response.xpath('//div[@class="pagination"]/a[last()-1]/text()').extract()[0]
         for page in range(int(pages)):
