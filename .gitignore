@@ -93,3 +93,4 @@ ENV/
 girl
 .DS_Store
 girls
+.vscode
